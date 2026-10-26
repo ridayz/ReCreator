@@ -3,3 +3,4 @@ dist/
 node_modules/
 dist/
 analysis/Intip-rebuild/assets/ui_256x256_248580032.png
+analyze-and-recreate/scripts/package-lock.json
