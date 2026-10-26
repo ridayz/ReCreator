@@ -43,6 +43,13 @@ Just tell the agent what you want to break apart / understand / recreate.
     py rebuilder.py --findings findings.json --level clone --out rebuilt/
     py rebuilder.py --findings findings.json --level simplify --out rebuilt_min/
 
+### RECOMPILE — Build It Real
+
+    py recompiler.py --src rebuilt/ --out dist/              # auto-detect + build
+    py recompiler.py --src rebuilt/ --toolchain cmake --out dist/
+    py recompiler.py --src rebuilt/ --toolchain pyinstaller --out dist/
+    py recompiler.py --src rebuilt/ --toolchain npm --out dist/
+
 ---
 
 ## Full Workflow
@@ -96,6 +103,10 @@ Just tell the agent what you want to break apart / understand / recreate.
     6. REBUILD
        py rebuilder.py --findings findings.json --level clone --out rebuilt/
 
+    7. RECOMPILE
+       py recompiler.py --src rebuilt/ --out dist/
+       (fix any missing header/stub it reports, then re-run until clean)
+
 ---
 
 ## File Index
@@ -112,6 +123,7 @@ Just tell the agent what you want to break apart / understand / recreate.
 | report_builder.py | Assemble structured reports |
 | bypass_tester.py | Systematic bypass testing |
 | rebuilder.py | Reconstruction from analysis |
+| recompiler.py | Compile rebuilt source into a runnable artifact |
 
 ---
 
